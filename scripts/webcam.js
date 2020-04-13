@@ -200,18 +200,20 @@ function uploadVideo(){
 }
 
 function createMisGuifos(){
-    var valor = localStorage.getItem("guifos");
-    const data = JSON.parse(valor);
-    for (var i = 0; i < data.length; i++) {
-      array.push(data[i]);
-    }    
-    var gifImg = document.createElement('img');
+    if(localStorage.getItem("guifos") != null){
+        var valor = localStorage.getItem("guifos");
+        const data = JSON.parse(valor);
+        for (var i = 0; i < data.length; i++) {
+        array.push(data[i]);
+        }    
+        var gifImg = document.createElement('img');
 
-    for (let i = 0; i < array.length; i++) {
-        gifImg.src = array[i].data.images.downsized.url;
-        
-        document.getElementById('resultadoBusqueda').append(document.importNode(gifImg, true));         
+        for (let i = 0; i < array.length; i++) {
+            gifImg.src = array[i].data.images.downsized.url;
+            
+            document.getElementById('resultadoBusqueda').append(document.importNode(gifImg, true));         
+        }
+        array = [];
     }
-    array = [];
-  }
+}
 //#endregion
