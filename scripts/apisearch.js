@@ -4,6 +4,8 @@ body.onLoad = trendingGifs();
 
 let searchBox = document.getElementById('buscadorText');
 let btnBuscar = document.getElementById('btnBuscar');
+let sugerenciasText = document.getElementById('sugerenciasText');
+let tendenciasText = document.getElementById('tendenciasText');
 let lupa = document.getElementById('lupa');
 
 function trendingGifs(){
@@ -59,7 +61,11 @@ function buscarGif(){
     elem.innerHTML = '';
 
     var sugeridos = document.getElementById('sugeridos');
-    sugeridos.innerHTML = '';
+    sugeridos.innerHTML = '';    
+
+    sugerenciasText.style.display = 'none';
+
+    tendenciasText.placeholder = 'Búsqueda: ' + search;
 
     const found = fetch("https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=" + apikey)
         .then(response => {        
