@@ -1,0 +1,90 @@
+// Colores
+// Basicos
+$blanco: #FFFFFF;
+$blanco1: #FFF4FD;
+$gris0: #E6E6E6;
+$gris1: #B4B4B4;
+$gris2: #979797;
+$gris3: #808080;
+$gris4: #5C5C5C;
+$negro: #000000;
+
+// Tema
+$rosa1: #EE3EFE;
+$rosa3: #A72CB3;
+
+$azul1: #2E32FB; 
+$azul2: #110038;
+$azul3: #180039;
+$azul4: #110038;
+
+body{
+    background-color: $azul3;
+}
+
+button{
+    background: $rosa1;
+    color: $blanco;
+    border: 1px solid $azul2;
+    box-shadow: inset -1px -1px 0 0 $rosa3, inset 1px 1px 0 0 $blanco;
+}
+
+.secondary{
+    background: $azul4;
+    box-shadow: inset -1px -1px 0 0 $gris4, inset 1px 1px 0 0 $blanco1;
+}
+
+button.secondary:hover{
+    outline: 1px dotted $blanco;
+}
+
+a{
+    color: $blanco;
+}
+
+.titleBar{
+    background-image: linear-gradient(270deg, $rosa1 0%, $azul1 100%);
+    box-shadow: 0 1px 0 0 $azul2;
+    color: $blanco;
+}
+
+.window98{
+    background-color: $gris1;
+    box-shadow: inset -2px -2px 0 0 $gris1, inset 2px 2px 0 0 $blanco;
+}
+
+
+%inputboxes{
+    border: 1px solid $gris2;
+    box-shadow: inset -2px -2px 0 0 $gris0, inset 2px 2px 0 0 $negro;
+}
+
+input[type=text]{
+    @extend %inputboxes;
+}
+
+#buscadorText{
+    @extend %inputboxes;
+    box-shadow: inset -2px -2px 0 0 $gris0, inset 2px 2px 0 0 $negro;
+}
+
+#btnBuscar:disabled,
+#btnBuscar[disabled]{
+    color: $gris2;
+    background: $gris1;
+    border: 1px solid $gris3;
+    box-shadow: inset -1px -1px 0 0 $gris1, inset 1px 1px 0 0 $blanco;
+}
+
+.MenuEstilos a {
+    background: #F0F0F0;
+    border: 1px solid $gris3;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 $blanco;
+    color: $azul2;
+}
+
+.MenuEstilos a:hover{
+    border: 1px solid #33358f33;
+    background: #2E32FB;
+    color: $blanco;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/light.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f46c9742da.js" crossorigin="anonymous"></script>
+    <title>GifOS</title>
+</head>
+<body>
+    <div class="titleBar">
+        ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
+    </div>
+    <div class="container">
+        <nav>
+            <div class="centradoVertical">
+                <img id="arrowVolver" src="images/arrow.svg" alt="flecha volver">
+                <img id="logo" src="images/gifOF_logo.png" alt="Logo gifOS">            
+            </div>
+        </nav>
+        <section class="flexCenter">
+            <div id="videoContainer" class="window98">
+                <div class="titleBar">Crear Guifos</div>
+                <div id="msgWindow">
+                    <div class="flexSpace vidPopUp">
+                        <div class="p25">
+                            <img src="images/window img.png" alt="window">
+                        </div>
+                        <div>
+                            <p>
+                                <b>Aqui podrás crear tus propios guifos</b>
+                            </p>
+                            <p>Crear tu <b><i>guifo</i></b> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+                            <ol>
+                                <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+                                <li>Capturar tu momento guifo</li>
+                                <li>Revisar el momento</li>
+                                <li>Listo para subir y compartir!</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="toRight">                        
+                        <button id="btnCancelar" class='secondary'>Cancelar</button>
+                        <button id="btnComenzar">Comenzar</button>
+                    </div>
+                </div>
+                <div id="videoWindow">
+                    <div class="centradoVertical">
+                        <video id="video"></video>
+                    </div>
+                    <div id="_btnRecord" class="toRight">
+                        <button class="btnCombinado btnIcon2"><img src="/images/camera.svg" alt="cameraIcon"></button>
+                        <button id="btnRecord">Capturar</button>
+                    </div>
+                    <div id='_btnRecording' class="toRight">
+                        <button class="btnCombinado btnIcon2"><img src="/images/recording.svg" alt="cameraIcon"></button>
+                        <button id="btnListo">Listo</button>
+                    </div>
+                </div>
+                <div id="previewGifWindow">
+                    <img id="previewGif">                    
+                    <div class="toRight">                        
+                        <button id="btnRepetir" class='secondary'>Repetir Captura</button>
+                        <button id="btnSubir">Subir Guifo</button>
+                    </div>
+                </div>
+                <div id="uploadingWindow">
+                    <div class="blockFlexCenter">
+                        <img src="/images/globe_img.png" alt="globo Terraqueo">
+                        <h4>Estamos subiendo tu guifo</h4>
+                        <div id="loadingBar"></div>
+                        <p>Tiempo restante: <s>38 años</s> algunos minutos</p>
+                    </div>
+                    <div class="toRight">                        
+                        <button id="btnCancelar2" class="secondary">Cancelar</button>                        
+                    </div>
+                </div>
+                <div id="finishedWindow">
+                    <div class="flexSpace vidPopUp">
+                        <div>
+                            <img id="gifSubido">
+                        </div>
+                        <div>
+                            <h4>Guifo creado con éxito</h4>
+                            <button id="btnCopyLink" class='btnFinished secondary'>Copiar Enlace Guifo</button>
+                            <button id="btnDownloadGif" class='btnFinished secondary' download>Descargar Guifo</button>
+                        </div>
+                    </div>                    
+                    <div class="toRight">                        
+                        <button id="btnFinish">Listo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <input type="text" name="sugerencias" id="misGuifosText" placeholder="Mis guifos">
+        
+        <section id="resultadoBusqueda">
+
+        </section>
+    </div>
+    <script src="./scripts/index.js"></script>    
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./scripts/webcam.js"></script>
+</body>
+</html>

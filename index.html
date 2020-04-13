@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/light.css">
+            
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f46c9742da.js" crossorigin="anonymous"></script>
+    <title>GifOS</title>
+</head>
+<body>
+    <div class="titleBar">
+        ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
+    </div>
+    <div class="container">
+        <nav>
+            <img id="logo" src="images/gifOF_logo.png" alt="Logo gifOS">
+            <div class="toCenter">
+                <button id="crearGuifo">Crear Guifos</button>
+                <div id="btnEstilos" class="dropdown">
+                    <button class="btnCombinado">Elegir Tema</button>
+                    <button class="btnIcon"><i class="fas fa-caret-down"></i></button>
+                    <div id="MenuEstilos" class="MenuEstilos window98">
+                        <a id="estiloClaro" href="#"></a>
+                        <a id="estiloOscuro" href="#"></a>
+                    </div>
+                </div>
+                <a id="btnMisGuifos">Mis Guifos</a>
+            </div>
+        </nav>
+        <section id="buscador">
+            <div class="window98">
+                <div class="titleBar">Buscar</div>
+                <div class="flexSpace">
+                    <input type="text" name="buscador" id="buscadorText" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                    <button class="centradoVertical btnDesactivado" id="btnBuscar" disabled><img id="lupa" src="images/lupa_inactive.svg" alt="Lupa">Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <input type="text" name="sugerencias" id="sugerenciasText" placeholder="Hoy te sugerimos">
+        <section id="sugeridos">
+            <div class="window98 gif1">
+                <div class="titleBar">
+                    #JonathanVanNess
+                </div>
+                <div style="background: url('https://media.giphy.com/media/5PhoLTGAiHguInjU8w/giphy.gif') ;
+                height: 286px;
+                background-size: cover;">
+                </div>
+            </div>
+            <div class="window98 gif1">
+                <div class="titleBar">
+                    #SailorMercury
+                </div>
+                <div style="background: url('https://media.giphy.com/media/148v5ID1vNBVyo/giphy.gif') no-repeat center;
+                height: 286px;
+                background-size: cover;">
+                </div>
+            </div>
+            <div class="window98 gif1">
+                <div class="titleBar">
+                    #FabFive
+                </div>
+                <div style="background: url('https://media.giphy.com/media/llIoeJcIMBS7AcITTa/giphy.gif') no-repeat center;
+                height: 286px;
+                background-size: cover;">
+                </div>
+            </div>
+            <div class="window98 gif1">
+                <div class="titleBar">
+                    #Unicorns&Rainbows
+                </div>
+                <div style="background: url('https://media.giphy.com/media/26AHG5KGFxSkUWw1i/giphy.gif') no-repeat center;
+                height: 286px;
+                background-size: cover;">
+                </div>
+            </div>
+        </section>
+        <input type="text" name="sugerencias" id="sugerenciasText" placeholder="Tendencias">
+        <section id="resultadoBusqueda">
+
+        </section>
+    </div>
+    <script src="./scripts/index.js"></script>    
+    <script src="./scripts/apisearch.js"></script>
+</body>
+</html>
