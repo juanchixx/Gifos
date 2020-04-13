@@ -8,7 +8,7 @@ let lupa = document.getElementById('lupa');
 
 function trendingGifs(){
     //api.giphy.com/v1/gifs/trending	
-    const found = fetch("http://api.giphy.com/v1/gifs/trending?api_key=" + apikey)
+    const found = fetch("https://api.giphy.com/v1/gifs/trending?api_key=" + apikey)
         .then(response => {        
             return response.json();
         })
@@ -58,7 +58,7 @@ function buscarGif(){
     var sugeridos = document.getElementById('sugeridos');
     sugeridos.innerHTML = '';
 
-    const found = fetch("http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=" + apikey)
+    const found = fetch("https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=" + apikey)
         .then(response => {        
             return response.json();
         })
