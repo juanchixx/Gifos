@@ -39,11 +39,11 @@ if(btnEstiloClaro != null){
 
     btnCrearGuifo.addEventListener("click", ()=>{
         localStorage.setItem('verMisGuifos','false');
-        location.href='/video.html';
+        location.href='video.html';
     })
     btnMisGuifos.addEventListener('click', ()=>{
         localStorage.setItem('verMisGuifos','true');
-        location.href='/video.html'
+        location.href='video.html'
     })
 }
 
