@@ -43,10 +43,14 @@ a{
 }
 
 #btnDownloadGif{
-    background: $rosa1;
     color: $blanco;
     border: 1px solid $azul2;
-    box-shadow: inset -1px -1px 0 0 $rosa3, inset 1px 1px 0 0 $blanco;
+    background: $azul4;
+    box-shadow: inset -1px -1px 0 0 $gris4, inset 1px 1px 0 0 $blanco1;
+}
+
+#btnDownloadGif:hover{
+    outline: 1px dotted $blanco;
 }
 
 .titleBar{

@@ -44,7 +44,11 @@ a{
     height: 36px;
     padding: 0 20px;
     font-size: 16px;
-    margin: 8px
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 #btnDownloadGif:hover{
@@ -104,7 +108,7 @@ a{
     margin-right: -13px;
 }
 
-.btnFinished{
+.btnFinished, #btnDownloadGif.btnFinished{
     width: stretch;
     margin: 7px 46px 7px 0;
 }

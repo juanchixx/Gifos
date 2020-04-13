@@ -25,11 +25,15 @@ a {
 }
 
 #btnDownloadGif {
-  background: #EE3EFE;
   color: #FFFFFF;
   border: 1px solid #110038;
-  -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+  background: #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #5C5C5C, inset 1px 1px 0 0 #FFF4FD;
+          box-shadow: inset -1px -1px 0 0 #5C5C5C, inset 1px 1px 0 0 #FFF4FD;
+}
+
+#btnDownloadGif:hover {
+  outline: 1px dotted #FFFFFF;
 }
 
 .titleBar {

@@ -44,6 +44,16 @@ a {
   padding: 0 20px;
   font-size: 16px;
   margin: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
 }
 
 #btnDownloadGif:hover {
@@ -114,7 +124,7 @@ a {
   margin-right: -13px;
 }
 
-.btnFinished {
+.btnFinished, #btnDownloadGif.btnFinished {
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
