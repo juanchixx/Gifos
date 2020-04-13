@@ -100,10 +100,6 @@ btnCopyLink.addEventListener('click', ()=>{
     navigator.clipboard.writeText(clipboardGif);
 })
 
-btnDownloadGif.addEventListener('click', ()=>{
-    location.href= urlBlob;
-})
-
 //#endregion
 //#region Metodos
 function comenzar(){
@@ -145,7 +141,8 @@ function prevGif(){
     form.append('file', blobRecord, 'myGif.gif');
     urlBlob = URL.createObjectURL(blobRecord);
 
-    previewGif.src = urlBlob;
+    previewGif.src = urlBlob;    
+    btnDownloadGif.href = urlBlob;
 }
 
 function getStreamAndRecord(){

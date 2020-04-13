@@ -36,6 +36,13 @@ a{
     color: $azul2;
 }
 
+#btnDownloadGif{
+    background: $rosa1;
+    color: $azul2;
+    border: 1px solid $azul2;
+    box-shadow: inset -1px -1px 0 0 $rosa3, inset 1px 1px 0 0 $blanco;
+}
+
 .titleBar{
     background-image: linear-gradient(270deg, $rosa1 0%, $azul1 100%);
     box-shadow: 0 1px 0 0 $azul2;

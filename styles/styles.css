@@ -39,6 +39,19 @@ a {
   padding: 10px;
 }
 
+#btnDownloadGif {
+  height: 36px;
+  padding: 0 20px;
+  font-size: 16px;
+  margin: 8px;
+}
+
+#btnDownloadGif:hover {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+  cursor: pointer;
+}
+
 .container {
   padding: 0 100px;
 }
