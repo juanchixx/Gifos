@@ -103,8 +103,20 @@ a{
     font-weight: 600;
 }
 
-.window98{
+.window98, .window98_{
     padding: 2px;
+}
+
+.window98_ .titleBar{
+    visibility: hidden;
+}
+
+.window98_:hover .titleBar {
+    visibility: visible;
+    position: absolute;
+    padding-left: 0px;
+    margin-top: -25px;
+    width: inherit;
 }
 
 .flexSpace{

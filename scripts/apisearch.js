@@ -19,24 +19,27 @@ function trendingGifs(){
             var titleBar = document.createElement('div');
             var backGif = document.createElement('div');
     
-            window98.append(titleBar);
+            
             //window98.append(backGif);
         
-            window98.classList.add('window98');
+            window98.classList.add('window98_');
             window98.classList.add('gifb');
             titleBar.classList.add('titleBar');
 
             //var resul = document.getElementById('resultadoBusqueda');
             for (let i = 0; i < 25; i++) {
                 var fragment = document.createDocumentFragment();
-                console.log(data.data[i].title);
-                titleBar.innerText = data.data[i].title;
+                var title = data.data[i].title
+                var res = title.split(" ");
+
+                titleBar.innerText = '#' + res.join(' #');
                 backGif.style.background = "url('" + data.data[i].images.downsized.url + "') no-repeat center";
                 backGif.style.backgroundSize = "cover";
-                backGif.style.height = "280px";
+                backGif.style.height = "300px";
                 window98.style.width = data.data[i].images.downsized.width + "px";
                 fragment.appendChild(backGif);
                 window98.appendChild(fragment);
+                window98.append(titleBar);
                 
                 document.getElementById('resultadoBusqueda').append(document.importNode(window98, true));         
                 //const element = array[index];                
