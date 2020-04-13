@@ -55,15 +55,15 @@ finishedWindow.style.display = 'none';
 //#endregion
 //#region Eventos
 arrowVolver.addEventListener('click', ()=>{
-    location.href='/';
+    location.href='index.html';
 })
 
 btnCancelar.addEventListener('click', ()=>{
-    location.href='/';
+    location.href='index.html';
 })
 
 btnFinish.addEventListener('click', ()=>{
-    location.href='/';
+    location.href='index.html';
 })
 
 // PREPARA CÁMARA
