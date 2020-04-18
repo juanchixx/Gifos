@@ -1,6 +1,6 @@
 let apikey = 'mcBjmfLLic6fz7OBERAMdLdAL9PY2zLq';
 
-body.onLoad = trendingGifs();
+body.onLoad = cargarGifs();
 
 let searchBox = document.getElementById('buscadorText');
 let btnBuscar = document.getElementById('btnBuscar');
@@ -8,8 +8,59 @@ let sugerenciasText = document.getElementById('sugerenciasText');
 let tendenciasText = document.getElementById('tendenciasText');
 let lupa = document.getElementById('lupa');
 
-function trendingGifs(){
-    //api.giphy.com/v1/gifs/trending	
+function cargarGifs(){
+    recomendedGif('puppy',1);
+    recomendedGif('pixar',2);
+    recomendedGif('cat',3);
+    recomendedGif('funny',4);
+    trendingGifs();
+}
+
+function recomendedGif(searchWord, numberGif){    
+    const found = fetch("https://api.giphy.com/v1/gifs/search?q=" + searchWord + "&api_key=" + apikey)
+        .then(response => {        
+            return response.json();
+        })
+        .then(data => {  
+            console.log(data);
+            var divGif = document.getElementById('gifR' + numberGif);
+            var titleBar = document.createElement('div');
+            var backGif = document.createElement('div');
+            var btn = document.createElement('button');
+            btn.innerHTML = 'Ver Más...';
+            btn.classList.add('btnVerMas');
+            btn.id = 'btnSearch' + numberGif;
+
+            btn.addEventListener('click', ()=>{
+                searchBox.value = searchWord;
+                buscarGif();
+            })
+            titleBar.classList.add('titleBar');
+            
+            var fragment = document.createDocumentFragment();
+            var title = data.data[0].title
+            var res = title.split(" ");
+
+            titleBar.innerText = '#' + res.join(' #');
+            backGif.style.background = "url('" + data.data[0].images.downsized.url + "') no-repeat center";
+            backGif.style.backgroundSize = "cover";
+            backGif.style.height = "286px";
+            fragment.appendChild(backGif); 
+            divGif.append(titleBar);
+            divGif.appendChild(fragment);
+            divGif.append(btn);
+
+
+            return data;
+        })
+        .catch(error => {
+            console.log(error);
+            return error;
+        });
+    return found;
+}
+
+function trendingGifs(){    
     const found = fetch("https://api.giphy.com/v1/gifs/trending?api_key=" + apikey)
         .then(response => {        
             return response.json();
@@ -20,15 +71,11 @@ function trendingGifs(){
             var window98 = document.createElement('div');
             var titleBar = document.createElement('div');
             var backGif = document.createElement('div');
-    
-            
-            //window98.append(backGif);
-        
+
             window98.classList.add('window98_');
             window98.classList.add('gifb');
             titleBar.classList.add('titleBar');
 
-            //var resul = document.getElementById('resultadoBusqueda');
             for (let i = 0; i < 25; i++) {
                 var fragment = document.createDocumentFragment();
                 var title = data.data[i].title
@@ -38,13 +85,19 @@ function trendingGifs(){
                 backGif.style.background = "url('" + data.data[i].images.downsized.url + "') no-repeat center";
                 backGif.style.backgroundSize = "cover";
                 backGif.style.height = "300px";
-                window98.style.width = data.data[i].images.downsized.width + "px";
+                backGif.style.display = 'flex';
+                backGif.style.flexGrow = '1';
+
+                //window98.style.width = data.data[i].images.downsized.width + "px";
                 fragment.appendChild(backGif);
                 window98.appendChild(fragment);
                 window98.append(titleBar);
-                
-                document.getElementById('resultadoBusqueda').append(document.importNode(window98, true));         
-                //const element = array[index];                
+
+                var newWindow = document.importNode(window98, true);
+                if(i == 4 || i == 13 || i == 18){
+                    newWindow.style.width = '600px';
+                }
+                document.getElementById('resultadoBusqueda').append(newWindow);         
             }
             
             return data;
@@ -81,23 +134,32 @@ function buscarGif(){
             window98.append(titleBar);
             //window98.append(backGif);
         
-            window98.classList.add('window98');
+            window98.classList.add('window98_');
             window98.classList.add('gifb');
             titleBar.classList.add('titleBar');
 
             //var resul = document.getElementById('resultadoBusqueda');
             for (let i = 0; i < 25; i++) {
                 var fragment = document.createDocumentFragment();
-                console.log(data.data[i].title);
-                titleBar.innerText = data.data[i].title;
+                var title = data.data[i].title;
+                var res = title.split(" ");
+
+                titleBar.innerText = '#' + res.join(' #');
                 backGif.style.background = "url('" + data.data[i].images.downsized.url + "') no-repeat center";
-                backGif.style.backgroundSize = "cover";
-                backGif.style.height = "280px";
-                window98.style.width = data.data[i].images.downsized.width + "px";
+                backGif.style.backgroundSize = 'cover';
+                backGif.style.height = "300px";
+                backGif.style.display = 'flex';
+                backGif.style.flexGrow = '1';               
+
                 fragment.appendChild(backGif);
                 window98.appendChild(fragment);
-                
-                document.getElementById('resultadoBusqueda').append(document.importNode(window98, true));         
+                window98.append(titleBar);
+
+                var newWindow = document.importNode(window98, true);
+                if(i == 4 || i == 13 || i == 18){
+                    newWindow.style.width = '600px';
+                }
+                document.getElementById('resultadoBusqueda').append(document.importNode(newWindow, true));         
                 //const element = array[index];                
             }
             

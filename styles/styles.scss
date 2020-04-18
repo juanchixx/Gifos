@@ -207,6 +207,11 @@ a{
     font-size: 16px;
 }
 
+.btnVerMas{
+    position: absolute;
+    margin-top: -50px;
+}
+
 input[type=text]{
     @extend %inputboxes;
 }
